@@ -4,7 +4,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 public class ReducerMaxCO extends Reducer<Text, DoubleWritable, Text, DoubleWritable> {
-	
+
 	//He quitado el decimal format
 	/**
 	 *@param Text key, Iterable<DoubleWritable> values, Context context
@@ -22,9 +22,9 @@ public class ReducerMaxCO extends Reducer<Text, DoubleWritable, Text, DoubleWrit
 			totalCO += value.get();
 			n++;
 		}
-		
+
 		context.write(key,new DoubleWritable(totalCO/n));
 	}
-  
+
 }
 
